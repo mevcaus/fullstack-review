@@ -8,7 +8,7 @@ const RepoList = ({ repos }) => (
       {repos.map(repo => (
         <li>
           <div>{repo.name}</div>
-          <div>{repo.url}</div>
+          <div><a href={repo.url}>{repo.url}</a></div>
           <div>{repo.description}</div>
           <div>{repo.favorites}</div>
           </li>

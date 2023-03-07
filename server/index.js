@@ -19,8 +19,6 @@ app.post('/repos', function (req, res) {
   // This route should take the github username provided
   // and get the repo information from the github API, then
   // save the repo information in the database
-  console.log('this is my req from app.post\n', req);
-  console.log('this is my req.body from app.post\n', req.body);
   let username = req.body.username;
   getReposByUsername(username)
     .then(repos => {
@@ -42,7 +40,6 @@ app.get('/repos', function (req, res) {
     .sort({ favorites: -1 })
     .limit(25)
     .then(repos => {
-      console.log('these are my repos\n', repos);
       res.json(repos);
     })
     .catch(err => {
